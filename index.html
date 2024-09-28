@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./imgs/images.jpeg">
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <!-- <div class="row"> -->
+        <h1 class="text-center"><span class="text-primary">E</span>M<span class="text-primary">A</span>M <span
+                class="text-primary">S</span>T<span class="text-primary">O</span>R<span class="text-primary">E</span>
+        </h1>
+        <h2>Product Mangement System</h2>
+        <!-- PRODUCT ****** NAME *** DIV -->
+        <div class="form-group my-3">
+            <label for="productname">Product Name</label>
+            <input type="text" id="productname" oninput="validateName()" class="form-control"
+                placeholder="Enter Product Name">
+            <p id="valideName" class="text-danger d-none">Please enter at least 1 capital character then enter small
+                character ex:"Earbuds"</p>
+        </div>
+        <!-- PRODUCT ****** PRICE *** DIV -->
+        <div class="form-group my-3">
+            <label for="productPrice">Product Price</label>
+            <input type="number" id="productPrice" oninput="validatePrice()" class="form-control"
+                placeholder="Enter Product Price">
+            <p id="validePrice" class="text-danger d-none">Please enter at least 3 numbers</p>
+        </div>
+        <!-- PRODUCT ****** CATEGORY *** DIV -->
+        <div class="form-group my-3">
+            <label for="productCategory">Product Category</label>
+            <input type="text" id="productCategory" oninput="validateCateg()" class="form-control"
+                placeholder="Enter Product Category">
+            <p id="valideCateg" class="text-danger d-none">Please enter at least 1 capital character from A->D </p>
+        </div>
+        <!-- PRODUCT ****** DESCRIPTION ***** DIV -->
+        <div class="form-group my-3">
+            <label for="productDesc">Product Description</label>
+            <input type="text" id="productDesc" oninput="validateDesc()" class="form-control"
+                placeholder="Enter your opinion about the product">
+            <p id="valideDesc" class="text-danger d-none">Please enter at least 1 word ex:"good" and max 100 letters
+            </p>
+        </div>
+        <!-- BUTTONS ***** DIV -->
+        <div class="md-3">
+            <button class="btn btn-outline-primary bg-black  " id="btn" onclick="addProduct()">Add Product</button>
+            <button class="btn btn-success d-none" id="save_btn" onclick="saveUpdate()">Save Change</button>
+        </div>
+        <!-- PRODUCT ****** SEARCH ***** DIV -->
+        <div class="form-group my-3">
+            <input type="text" id="productSearch" class="form-control my-3" oninput="searchProduct(this.value)"
+                placeholder="Search with product name">
+            <p id="valideSearch" class="text-danger d-none">Sorry! Product not found </p>
+        </div>
+        <!-- PRODUCT ****** TABLE ***** DIV -->
+
+
+        <div class="table-responsive my-3">
+            <table class="table text-white text-center  my-5" id="productTable">
+                <thead>
+                    <th>Index</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Category</th>
+                    <th>Product Description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- </div> -->
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>
