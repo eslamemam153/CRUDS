@@ -142,7 +142,7 @@ function validateCateg() {
   }
 }
 function validateDesc() {
-  var regex = /^[A-Za-z]{3,100}\s/;
+  var regex = /^.{3,100}/;
   if (regex.test(productDesc.value)) {
     productDesc.style.border = "none";
     document.getElementById("valideDesc").classList.add("d-none")
